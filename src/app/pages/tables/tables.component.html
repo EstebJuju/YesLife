@@ -1,0 +1,27 @@
+<div class="header bg-gradient-danger pb-8 pt-5 pt-md-8">
+</div>
+<!-- Page content -->
+<div class="container-fluid mt--8">
+  <!-- Table -->
+  <div class="form-row">
+    <div class="col">
+      <div class="card shadow">
+        <div class="card-header border-0">
+          <h3 class="mb-0">Questionnaire journalier</h3>
+        </div>
+        <div class="table-responsive">
+
+          <div class="list-group" *ngFor="let listQuestion of listFirstQuestionnaire">
+            <h3 class="card-title marginQuestions">{{listQuestion.label}}</h3>
+            <input class="input-group marginQuestions" *ngIf="listQuestion.isSelect === false"
+                   placeholder="{{this.listQuestion.placeholder}}">
+            <select class="dropdown-toggle marginQuestions"
+                    *ngIf="listQuestion.isSelect && listQuestion.selectOptions != null">
+              <option *ngFor="let option of listQuestion.selectOptions" value="{{option}}">{{option}}</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
